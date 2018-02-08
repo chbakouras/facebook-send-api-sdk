@@ -2,28 +2,41 @@
   "name": "facebook-send-api-sdk",
   "version": "1.0.0",
   "description": "ECMAScript 6 SendApi SDK",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "mkdir lib",
+    "clean": "rm -rf lib",
+    "prebuild": "npm run clean && npm run init",
+    "build": "babel ./src -d ./lib --ignore test.js"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/chbakouras/facebook-send-api.git"
   },
+  "author": "Chrisostomos Bakouras <chbakouras@gmail.com>",
   "keywords": [
     "send-api",
     "facebook",
     "javascript",
     "SendApi"
   ],
-  "author": "Chrisostomos Bakouras <chbakouras@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/chbakouras/facebook-send-api/issues"
   },
   "homepage": "https://github.com/chbakouras/facebook-send-api#readme",
   "dependencies": {
-    "request": "^2.81.0",
-    "request-promise": "^4.2.1"
-  }
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "files": [
+    "lib"
+  ]
 }
