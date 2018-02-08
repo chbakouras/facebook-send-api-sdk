@@ -2,10 +2,4 @@
 
 import SendApiSdk from "./SendApiSdk";
 
-export {
-    SendApiSdk
-};
-
-export default {
-    SendApiSdk
-};
+export default SendApiSdk;
