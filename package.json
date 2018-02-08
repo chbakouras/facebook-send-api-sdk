@@ -1,0 +1,28 @@
+{
+  "name": "facebook-send-api",
+  "version": "1.0.0",
+  "description": "ECMAScript 6 SendApi SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chbakouras/facebook-send-api.git"
+  },
+  "keywords": [
+    "send-api",
+    "facebook",
+    "javascript",
+    "SendApi"
+  ],
+  "author": "Chrisostomos Bakouras <chbakouras@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chbakouras/facebook-send-api/issues"
+  },
+  "homepage": "https://github.com/chbakouras/facebook-send-api#readme",
+  "dependencies": {
+    "request-promise": "^4.2.1"
+  }
+}
