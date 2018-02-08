@@ -1,5 +1,5 @@
 {
-  "name": "facebook-send-api",
+  "name": "facebook-send-api-sdk",
   "version": "1.0.0",
   "description": "ECMAScript 6 SendApi SDK",
   "main": "index.js",
