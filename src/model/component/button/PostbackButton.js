@@ -1,8 +1,9 @@
 'use strict';
+
 import Button from "./Button";
 import {ButtonType} from "../../../constants";
 
-class PostbackButton extends Button {
+export default class PostbackButton extends Button {
 
     constructor({title, payload}) {
         super(ButtonType.POSTBACK);
@@ -10,5 +11,3 @@ class PostbackButton extends Button {
         this.payload = payload;
     }
 }
-
-export default PostbackButton;

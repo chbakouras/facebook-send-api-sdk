@@ -3,7 +3,7 @@
 import {MessagingType, AttachmentType, TemplateType, TopElementStyle} from "../../constants";
 import {Message, Attachment} from "../component";
 
-class ListTemplate {
+export default class ListTemplate {
 
     constructor({recipient, elements, button, top_element_style, messaging_type}) {
         if (elements.length < 2) throw new Error("Minimum 2 elements");
@@ -24,5 +24,3 @@ class ListTemplate {
         });
     }
 }
-
-export default ListTemplate;

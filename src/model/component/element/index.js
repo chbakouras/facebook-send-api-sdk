@@ -9,3 +9,9 @@ export {
     MediaElement,
     OpenGraphElement,
 };
+
+export default {
+    FbElement,
+    MediaElement,
+    OpenGraphElement,
+};

@@ -1,8 +1,9 @@
 'use strict';
+
 import Button from "./Button";
 import {ButtonType} from "../../../constants";
 
-class CallButton extends Button {
+export default class CallButton extends Button {
 
     constructor({title, payload}) {
         super(ButtonType.PHONE_NUMBER);
@@ -10,5 +11,3 @@ class CallButton extends Button {
         this.payload = payload;
     }
 }
-
-export default CallButton;

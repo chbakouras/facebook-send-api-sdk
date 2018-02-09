@@ -1,9 +1,9 @@
 'use strict';
 
-import {MessagingType, AttachmentType, TemplateType} from "../../constants";
-import {Message, Attachment} from "../component";
+import {AttachmentType, MessagingType, TemplateType} from "../../constants";
+import {Attachment, Message} from "../component";
 
-class MediaTemplate {
+export default class MediaTemplate {
 
     constructor({recipient, mediaElement, messaging_type}) {
         this.messaging_type = messaging_type ? messaging_type : MessagingType.NON_PROMOTIONAL_SUBSCRIPTION;
@@ -19,5 +19,3 @@ class MediaTemplate {
         });
     }
 }
-
-export default MediaTemplate;

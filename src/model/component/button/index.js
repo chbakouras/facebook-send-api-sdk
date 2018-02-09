@@ -21,3 +21,15 @@ export {
     ShareButton,
     UrlButton,
 };
+
+export default {
+    Button,
+    CallButton,
+    GamePlayButton,
+    LoginButton,
+    LogoutButton,
+    PaymentButton,
+    PostbackButton,
+    ShareButton,
+    UrlButton,
+};

@@ -26,14 +26,17 @@
   },
   "homepage": "https://github.com/chbakouras/facebook-send-api#readme",
   "dependencies": {
+    "gulp": "^3.9.1",
     "request": "^2.83.0",
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack-stream": "^4.0.0"
   },
   "files": [
     "lib"

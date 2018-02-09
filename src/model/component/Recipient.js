@@ -1,6 +1,6 @@
 'use strict';
 
-class Recipient {
+export default class Recipient {
 
     constructor({id, phone_number, user_ref, name}) {
         this.id = id;
@@ -17,5 +17,3 @@ class Recipient {
         }
     }
 }
-
-export default Recipient;

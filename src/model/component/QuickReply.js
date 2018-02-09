@@ -1,7 +1,8 @@
 'use strict';
-import QuickReplyContentType from "../../constants/QuickReplyContentType";
 
-class QuickReply {
+import {QuickReplyContentType} from "../../constants";
+
+export default class QuickReply {
 
     constructor({content_type, title, payload, image_url}) {
         this.content_type = content_type;
@@ -16,6 +17,3 @@ class QuickReply {
         }
     }
 }
-
-export default QuickReply;
-

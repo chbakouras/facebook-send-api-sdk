@@ -1,8 +1,9 @@
 'use strict';
+
 import Button from "./Button";
 import {ButtonType, AttachmentType, TemplateType} from "../../../constants";
 
-class ShareButton extends Button {
+export default class ShareButton extends Button {
 
     constructor(element) {
         super(ButtonType.ELEMENT_SHARE);
@@ -20,5 +21,3 @@ class ShareButton extends Button {
         }
     }
 }
-
-export default ShareButton;

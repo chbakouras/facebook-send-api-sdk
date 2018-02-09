@@ -1,8 +1,9 @@
 'use strict';
+
 import Button from "./Button";
 import {ButtonType} from "../../../constants";
 
-class PaymentButton extends Button {
+export default class PaymentButton extends Button {
 
     constructor({title, payload, currency, payment_type, is_test_payment, merchant_name, price_list}) {
         super(ButtonType.PAYMENT);
@@ -24,5 +25,3 @@ class PaymentButton extends Button {
         }
     }
 }
-
-export default PaymentButton;

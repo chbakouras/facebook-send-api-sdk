@@ -3,7 +3,7 @@
 import {MessagingType, AttachmentType, TemplateType} from "../../constants";
 import {Message, Attachment} from "../component";
 
-class ButtonTemplate {
+export default class ButtonTemplate {
 
     constructor({recipient, text, buttons, messaging_type}) {
         if (buttons.length > 3) throw new Error("Max 3 buttons");
@@ -22,5 +22,3 @@ class ButtonTemplate {
         });
     }
 }
-
-export default ButtonTemplate;

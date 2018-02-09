@@ -1,8 +1,9 @@
 'use strict';
+
 import Button from "./Button";
 import {ButtonType} from "../../../constants";
 
-class UrlButton extends Button {
+export default class UrlButton extends Button {
 
     constructor({url, title, webview_height_ratio, messenger_extensions, fallback_url, webview_share_button}) {
         super(ButtonType.WEB_URL);
@@ -26,5 +27,3 @@ class UrlButton extends Button {
         }
     }
 }
-
-export default UrlButton;

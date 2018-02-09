@@ -1,6 +1,6 @@
 'use strict';
 
-class FbElement {
+export default class FbElement {
 
     constructor({title, subtitle, image_url, default_action, buttons}) {
         this.title = title;
@@ -10,5 +10,3 @@ class FbElement {
         this.buttons = buttons;
     }
 }
-
-export default FbElement;

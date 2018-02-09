@@ -1,7 +1,8 @@
 'use strict';
-import MediaType from "../../../constants/MediaType";
 
-class MediaElement {
+import {MediaType} from "../../../constants";
+
+export default class MediaElement {
 
     constructor({media_type, attachment_id, url, button}) {
         if (media_type !== MediaType.IMAGE && media_type !== MediaType.VIDEO) throw  new Error("Not supported media type");
@@ -17,5 +18,3 @@ class MediaElement {
         this.buttons = [button];
     }
 }
-
-export default MediaElement;

@@ -1,8 +1,9 @@
 'use strict';
+
 import Button from "./Button";
 import {ButtonType} from "../../../constants";
 
-class GamePlayButton extends Button {
+export default class GamePlayButton extends Button {
 
     constructor({title, payload, playerId, contextId}) {
         super(ButtonType.GAME_PLAY);
@@ -17,5 +18,3 @@ class GamePlayButton extends Button {
         }
     }
 }
-
-export default GamePlayButton;

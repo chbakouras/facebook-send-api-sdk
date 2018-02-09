@@ -1,9 +1,10 @@
 'use strict';
-const MessageState = require('./constants/MessageState');
-const MessageResponse = require('./model/MessageResponse');
-const rp = require('request-promise');
 
-class SendApiSdk {
+import rp from 'request-promise';
+import MessageResponse from "./model/MessageResponse";
+import {MessageState} from "./constants";
+
+export default class SendApiSdk {
 
     constructor(accessToken) {
         this.apiUrl = `https://graph.facebook.com/v2.11/me/messages?access_token=${accessToken}`;
@@ -46,5 +47,3 @@ class SendApiSdk {
             .catch(error => console.log(error));
     }
 }
-
-export default SendApiSdk;

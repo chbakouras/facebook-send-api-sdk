@@ -1,9 +1,9 @@
 'use strict';
 
-import {MessagingType, AttachmentType, TemplateType, ImageAspectRatio} from "../../constants";
-import {Message, Attachment} from "../component";
+import {AttachmentType, ImageAspectRatio, MessagingType, TemplateType} from "../../constants";
+import {Attachment, Message} from "../component";
 
-class GenericTemplate {
+export default class GenericTemplate {
 
     constructor({recipient, elements, sharable, image_aspect_ratio, messaging_type}) {
         this.messaging_type = messaging_type ? messaging_type : MessagingType.NON_PROMOTIONAL_SUBSCRIPTION;
@@ -21,5 +21,3 @@ class GenericTemplate {
         });
     }
 }
-
-export default GenericTemplate;

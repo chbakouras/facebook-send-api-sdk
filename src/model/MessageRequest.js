@@ -1,9 +1,8 @@
 'use strict';
 
-import MessagingType from "../constants/MessagingType";
-import NotificationType from "../constants/NotificationType";
+import {MessagingType, NotificationType} from "../constants";
 
-class MessageRequest {
+export default class MessageRequest {
 
     constructor({recipient, message, messaging_type, notification_type, tag, sender_action}) {
         this.recipient = recipient;
@@ -21,5 +20,3 @@ class MessageRequest {
         }
     }
 }
-
-export default MessageRequest;

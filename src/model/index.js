@@ -1,8 +1,20 @@
 'use strict';
-const MessageRequest = require('./MessageRequest');
-const MessageResponse = require('./MessageResponse');
+
+import * as component from './component'
+import * as template from './template'
+import MessageRequest from './MessageRequest'
+import MessageResponse from './MessageResponse'
 
 export {
+    component,
+    template,
     MessageRequest,
-    MessageResponse,
+    MessageResponse
+};
+
+export default {
+    component,
+    template,
+    MessageRequest,
+    MessageResponse
 };

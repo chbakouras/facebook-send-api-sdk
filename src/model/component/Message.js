@@ -1,6 +1,6 @@
 'use strict';
 
-class Message {
+export default class Message {
 
     constructor({text, attachment, quick_replies, metadata}) {
         if (!text && !attachment) throw new Error("Message text or attachment must be included");
@@ -23,5 +23,3 @@ class Message {
         }
     }
 }
-
-export default Message;
