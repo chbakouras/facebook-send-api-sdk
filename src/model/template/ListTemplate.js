@@ -1,11 +1,14 @@
 'use strict';
 
-import {MessagingType, AttachmentType, TemplateType, TopElementStyle} from "../../constants";
-import {Message, Attachment} from "../component";
+import {AttachmentType, MessagingType, TemplateType, TopElementStyle} from "../../constants";
+import {Attachment, Message} from "../component";
+import Recipient from "../component/Recipient";
+import FbElement from "../component/element/FbElement";
+import Button from "../component/button/Button";
 
 export default class ListTemplate {
 
-    constructor({recipient, elements, button, top_element_style, messaging_type}) {
+    constructor(recipient: Recipient, elements: FbElement[], button: Button, top_element_style: string, messaging_type: string) {
         if (elements.length < 2) throw new Error("Minimum 2 elements");
         if (elements.length > 4) throw new Error("Maximum 4 elements");
 

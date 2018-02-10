@@ -1,8 +1,11 @@
 'use strict';
 
+import Attachment from "./Attachment";
+import QuickReply from "./QuickReply";
+
 export default class Message {
 
-    constructor({text, attachment, quick_replies, metadata}) {
+    constructor(text: string, attachment: Attachment, quick_replies: QuickReply[], metadata: string) {
         if (!text && !attachment) throw new Error("Message text or attachment must be included");
 
         if (text) {

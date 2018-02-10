@@ -6,12 +6,14 @@ import Attachment from "./Attachment";
 import Message from "./Message";
 import QuickReply from "./QuickReply";
 import Recipient from "./Recipient";
+import Name from "./Name";
 
 export {
     button,
     element,
     Attachment,
     Message,
+    Name,
     QuickReply,
     Recipient,
 };
@@ -21,6 +23,7 @@ export default {
     element,
     Attachment,
     Message,
+    Name,
     QuickReply,
     Recipient,
 };

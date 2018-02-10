@@ -5,7 +5,7 @@ import {ButtonType} from "../../../constants";
 
 export default class LoginButton extends Button {
 
-    constructor(url) {
+    constructor(url: string) {
         super(ButtonType.ACCOUNT_LINK);
         this.url = url;
     }

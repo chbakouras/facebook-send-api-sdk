@@ -5,7 +5,7 @@ import {ButtonType} from "../../../constants";
 
 export default class UrlButton extends Button {
 
-    constructor({url, title, webview_height_ratio, messenger_extensions, fallback_url, webview_share_button}) {
+    constructor(url: string, title: string, webview_height_ratio: string, messenger_extensions: boolean, fallback_url: string, webview_share_button: string) {
         super(ButtonType.WEB_URL);
         this.url = url;
         this.title = title;

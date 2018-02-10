@@ -2,7 +2,7 @@
 
 export default class Button {
 
-    constructor(type) {
+    constructor(type: string) {
         this.type = type;
     }
 }

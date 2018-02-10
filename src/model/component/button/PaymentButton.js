@@ -5,7 +5,7 @@ import {ButtonType} from "../../../constants";
 
 export default class PaymentButton extends Button {
 
-    constructor({title, payload, currency, payment_type, is_test_payment, merchant_name, price_list}) {
+    constructor(title: string, payload: string, currency: string, payment_type: string, is_test_payment: boolean, merchant_name: string, price_list) {
         super(ButtonType.PAYMENT);
         this.title = title;
         this.payload = payload;

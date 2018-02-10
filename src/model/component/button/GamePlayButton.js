@@ -5,7 +5,7 @@ import {ButtonType} from "../../../constants";
 
 export default class GamePlayButton extends Button {
 
-    constructor({title, payload, playerId, contextId}) {
+    constructor(title: string, payload: string, playerId: string, contextId: string) {
         super(ButtonType.GAME_PLAY);
         this.title = title;
         this.payload = payload;

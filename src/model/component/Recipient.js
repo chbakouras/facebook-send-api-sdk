@@ -1,8 +1,10 @@
 'use strict';
 
+import Name from "./Name";
+
 export default class Recipient {
 
-    constructor({id, phone_number, user_ref, name}) {
+    constructor(id: string, phone_number: string, user_ref: string, name: Name) {
         this.id = id;
 
         if (user_ref) {

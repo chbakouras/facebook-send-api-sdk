@@ -6,7 +6,7 @@ import {MessageState} from "./constants";
 
 export default class SendApiSdk {
 
-    constructor(accessToken) {
+    constructor(accessToken: string) {
         this.apiUrl = `https://graph.facebook.com/v2.11/me/messages?access_token=${accessToken}`;
         this.requestOptions = {
             method: 'POST',
@@ -15,7 +15,7 @@ export default class SendApiSdk {
         };
     }
 
-    sendMessage(messageRequestOrTemplate, typing) {
+    sendMessage(messageRequestOrTemplate: any, typing: boolean) {
         let options = {...this.requestOptions};
         options.body = messageRequestOrTemplate;
 

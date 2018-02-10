@@ -2,7 +2,7 @@
 
 export default class Attachment {
 
-    constructor({type, payload}) {
+    constructor(type: string, payload) {
         this.type = type;
         this.payload = payload;
     }

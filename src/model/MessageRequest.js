@@ -1,10 +1,12 @@
 'use strict';
 
 import {MessagingType, NotificationType} from "../constants";
+import Recipient from "./component/Recipient";
+import Message from "./component/Message";
 
 export default class MessageRequest {
 
-    constructor({recipient, message, messaging_type, notification_type, tag, sender_action}) {
+    constructor(recipient: Recipient, message: Message, messaging_type: string, notification_type:string, tag:string, sender_action: string) {
         this.recipient = recipient;
 
         if (sender_action) {
