@@ -1,4 +1,4 @@
 {
-  "presets": ["flow", "stage-3"],
+  "presets": ["env", "flow", "stage-3"],
   "plugins": ["transform-flow-strip-types"]
 }
