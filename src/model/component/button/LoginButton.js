@@ -1,12 +1,14 @@
 'use strict';
 
-import Button from "./Button";
-import {ButtonType} from "../../../constants";
+const constants = require('../../../constants');
 
-export default class LoginButton extends Button {
+const loginButton = function (url) {
+    const loginButtonObj = {};
 
-    constructor(url: string) {
-        super(ButtonType.ACCOUNT_LINK);
-        this.url = url;
-    }
-}
+    loginButtonObj.type = constants.ButtonType.ACCOUNT_LINK;
+    loginButtonObj.url = url;
+
+    return loginButtonObj;
+};
+
+module.exports = loginButton;

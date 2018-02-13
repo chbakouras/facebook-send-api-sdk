@@ -1,9 +1,12 @@
 'use strict';
 
-export default class Attachment {
+const attachment = function (type, payload) {
+    const attachmentObj = {};
 
-    constructor(type: string, payload) {
-        this.type = type;
-        this.payload = payload;
-    }
-}
+    attachmentObj.type = type;
+    attachmentObj.payload = payload;
+
+    return attachmentObj;
+};
+
+module.exports = attachment;

@@ -1,29 +1,19 @@
 'use strict';
 
-import * as button from "./button";
-import * as element from "./element";
-import Attachment from "./Attachment";
-import Message from "./Message";
-import QuickReply from "./QuickReply";
-import Recipient from "./Recipient";
-import Name from "./Name";
+const button = require('./button');
+const element = require('./element');
+const attachment = require('./Attachment');
+const message = require('./Message');
+const name = require('./Name');
+const quickReply = require('./QuickReply');
+const recipient = require('./Recipient');
 
-export {
-    button,
-    element,
-    Attachment,
-    Message,
-    Name,
-    QuickReply,
-    Recipient,
-};
-
-export default {
-    button,
-    element,
-    Attachment,
-    Message,
-    Name,
-    QuickReply,
-    Recipient,
+module.exports = {
+    button: button,
+    element: element,
+    attachment: attachment,
+    message: message,
+    name: name,
+    quickReply: quickReply,
+    recipient: recipient
 };

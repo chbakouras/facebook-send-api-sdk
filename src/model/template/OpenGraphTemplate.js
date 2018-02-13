@@ -1,23 +1,26 @@
 'use strict';
 
-import {AttachmentType, MessagingType, TemplateType} from "../../constants";
-import {Attachment, Message} from "../component";
-import Recipient from "../component/Recipient";
-import OpenGraphElement from "../component/element/OpenGraphElement";
+const constants = require('../../../constants');
+const attachment = require('./../component/Attachment');
+const message = require('./../component/Message');
 
-export default class OpenGraphTemplate {
+const openGraphTemplate = function (recipient, openGraphElement, messaging_type) {
+    const openGraphTemplateObj = {};
 
-    constructor(recipient: Recipient, openGraphElement: OpenGraphElement, messaging_type: string) {
-        this.messaging_type = messaging_type ? messaging_type : MessagingType.NON_PROMOTIONAL_SUBSCRIPTION;
-        this.recipient = recipient;
-        this.message = new Message({
-            attachment: new Attachment({
-                type: AttachmentType.TEMPLATE,
-                payload: {
-                    template_type: TemplateType.OPEN_GRAPH,
-                    elements: [openGraphElement]
-                }
-            })
-        });
-    }
-}
+    this.messaging_type = messaging_type ? messaging_type : constants.MessagingType.NON_PROMOTIONAL_SUBSCRIPTION;
+    this.recipient = recipient;
+    this.message = message(
+        null,
+        attachment(
+            constants.AttachmentType.TEMPLATE,
+            {
+                template_type: constants.TemplateType.OPEN_GRAPH,
+                elements: [openGraphElement]
+            }
+        )
+    );
+
+    return openGraphTemplateObj;
+};
+
+module.exports = openGraphTemplate;

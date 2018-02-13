@@ -1,35 +1,21 @@
 'use strict';
 
-import Button from "./Button";
-import CallButton from "./CallButton";
-import GamePlayButton from "./GamePlayButton";
-import LoginButton from "./LoginButton";
-import LogoutButton from "./LogoutButton";
-import PaymentButton from "./PaymentButton";
-import PostbackButton from "./PostbackButton";
-import ShareButton from "./ShareButton";
-import UrlButton from "./UrlButton";
+const callButton = require('./CallButton');
+const gamePlayButton = require('./GamePlayButton');
+const loginButton = require('./LoginButton');
+const logoutButton = require('./LogoutButton');
+const paymentButton = require('./PaymentButton');
+const postbackButton = require('./PostbackButton');
+const shareButton = require('./ShareButton');
+const urlButton = require('./UrlButton');
 
-export {
-    Button,
-    CallButton,
-    GamePlayButton,
-    LoginButton,
-    LogoutButton,
-    PaymentButton,
-    PostbackButton,
-    ShareButton,
-    UrlButton,
-};
-
-export default {
-    Button,
-    CallButton,
-    GamePlayButton,
-    LoginButton,
-    LogoutButton,
-    PaymentButton,
-    PostbackButton,
-    ShareButton,
-    UrlButton,
+module.exports = {
+    callButton: callButton,
+    gamePlayButton: gamePlayButton,
+    loginButton: loginButton,
+    logoutButton: logoutButton,
+    paymentButton: paymentButton,
+    postbackButton: postbackButton,
+    shareButton: shareButton,
+    urlButton: urlButton
 };

@@ -1,28 +1,28 @@
 'use strict';
 
-import Attachment from "./Attachment";
-import QuickReply from "./QuickReply";
+const message = function (text, attachment, quick_replies, metadata) {
+    const messageObj = {};
 
-export default class Message {
+    if (!text && !attachment) throw new Error("Message text or attachment must be included");
 
-    constructor(text: string, attachment: Attachment, quick_replies: QuickReply[], metadata: string) {
-        if (!text && !attachment) throw new Error("Message text or attachment must be included");
-
-        if (text) {
-            this.text = text;
-        }
-
-        if (attachment) {
-            this.attachment = attachment;
-        }
-
-        if (quick_replies) {
-            if (quick_replies.length > 11) throw new Error("Facebook renders up to 11 quick replies");
-            this.quick_replies = quick_replies;
-        }
-
-        if (metadata) {
-            this.metadata = metadata;
-        }
+    if (text) {
+        messageObj.text = text;
     }
-}
+
+    if (attachment) {
+        messageObj.attachment = attachment;
+    }
+
+    if (quick_replies) {
+        if (quick_replies.length > 11) throw new Error("Facebook renders up to 11 quick replies");
+        messageObj.quick_replies = quick_replies;
+    }
+
+    if (metadata) {
+        messageObj.metadata = metadata;
+    }
+
+    return messageObj;
+};
+
+module.exports = message;

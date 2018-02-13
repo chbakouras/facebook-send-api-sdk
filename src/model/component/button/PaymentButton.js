@@ -1,27 +1,29 @@
 'use strict';
 
-import Button from "./Button";
-import {ButtonType} from "../../../constants";
+const constants = require('../../../constants');
 
-export default class PaymentButton extends Button {
+const paymentButton = function (title, payload, currency, payment_type, is_test_payment, merchant_name, price_list) {
+    const paymentButtonObj = {};
 
-    constructor(title: string, payload: string, currency: string, payment_type: string, is_test_payment: boolean, merchant_name: string, price_list) {
-        super(ButtonType.PAYMENT);
-        this.title = title;
-        this.payload = payload;
+    paymentButtonObj.type = constants.ButtonType.PAYMENT;
+    paymentButtonObj.title = title;
+    paymentButtonObj.payload = payload;
 
-        this.payment_summary = {
-            currency: currency,
-            payment_type: payment_type,
-            is_test_payment: is_test_payment,
-            merchant_name: merchant_name,
-            requested_user_info: [
-                "shipping_address",
-                "contact_name",
-                "contact_phone",
-                "contact_email"
-            ],
-            price_list: price_list
-        }
-    }
-}
+    paymentButtonObj.payment_summary = {
+        currency: currency,
+        payment_type: payment_type,
+        is_test_payment: is_test_payment,
+        merchant_name: merchant_name,
+        requested_user_info: [
+            "shipping_address",
+            "contact_name",
+            "contact_phone",
+            "contact_email"
+        ],
+        price_list: price_list
+    };
+
+    return paymentButtonObj;
+};
+
+module.exports = paymentButton;

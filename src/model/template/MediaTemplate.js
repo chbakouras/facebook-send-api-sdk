@@ -1,23 +1,26 @@
 'use strict';
 
-import {AttachmentType, MessagingType, TemplateType} from "../../constants";
-import {Attachment, Message} from "../component";
-import Recipient from "../component/Recipient";
-import MediaElement from "../component/element/MediaElement";
+const constants = require('../../../constants');
+const attachment = require('./../component/Attachment');
+const message = require('./../component/Message');
 
-export default class MediaTemplate {
+const mediaTemplate = function (recipient, mediaElement, messaging_type) {
+    const mediaTemplateObj = {};
 
-    constructor(recipient: Recipient, mediaElement: MediaElement, messaging_type: string) {
-        this.messaging_type = messaging_type ? messaging_type : MessagingType.NON_PROMOTIONAL_SUBSCRIPTION;
-        this.recipient = recipient;
-        this.message = new Message({
-            attachment: new Attachment({
-                type: AttachmentType.TEMPLATE,
-                payload: {
-                    template_type: TemplateType.MEDIA,
-                    elements: [mediaElement]
-                }
-            })
-        });
-    }
-}
+    mediaTemplateObj.messaging_type = messaging_type ? messaging_type : constants.MessagingType.NON_PROMOTIONAL_SUBSCRIPTION;
+    mediaTemplateObj.recipient = recipient;
+    mediaTemplateObj.message = message(
+        null,
+        attachment(
+            constants.AttachmentType.TEMPLATE,
+            {
+                template_type: constants.TemplateType.MEDIA,
+                elements: [mediaElement]
+            }
+        )
+    );
+
+    return mediaTemplateObj;
+};
+
+module.exports = mediaTemplate;

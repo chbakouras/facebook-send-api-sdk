@@ -1,13 +1,15 @@
 'use strict';
 
-import Button from "./Button";
-import {ButtonType} from "../../../constants";
+const constants = require('../../../constants');
 
-export default class PostbackButton extends Button {
+const postbackButton = function (title, payload) {
+    const postbackButtonObj = {};
 
-    constructor(title: string, payload: string) {
-        super(ButtonType.POSTBACK);
-        this.title = title;
-        this.payload = payload;
-    }
-}
+    postbackButtonObj.type = constants.ButtonType.POSTBACK;
+    postbackButtonObj.title = title;
+    postbackButtonObj.payload = payload;
+
+    return postbackButtonObj;
+};
+
+module.exports = postbackButton;

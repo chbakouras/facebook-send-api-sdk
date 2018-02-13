@@ -1,14 +1,14 @@
 'use strict';
 
-export const AttachmentType = {
+const AttachmentType = {
     IMAGE: 'image',
     AUDIO: 'audio',
     VIDEO: 'video',
     FILE: 'file',
-    TEMPLATE: 'template',
+    TEMPLATE: 'template'
 };
 
-export const ButtonType = {
+const ButtonType = {
     PAYMENT: "payment",
     PHONE_NUMBER: "phone_number",
     GAME_PLAY: "game_play",
@@ -16,26 +16,26 @@ export const ButtonType = {
     ACCOUNT_UNLINK: "account_unlink",
     POSTBACK: "postback",
     ELEMENT_SHARE: "element_share",
-    WEB_URL: "web_url",
+    WEB_URL: "web_url"
 };
 
-export const ImageAspectRatio = {
+const ImageAspectRatio = {
     HORIZONTAL: 'horizontal',
     SQUARE: 'square'
 };
 
-export const MediaType = {
+const MediaType = {
     IMAGE: 'image',
-    VIDEO: 'video',
+    VIDEO: 'video'
 };
 
-export const MessageState = {
+const MessageState = {
     TYPING_ON: 'typing_on',
     TYPING_OFF: 'typing_off',
-    MARK_SEEN: 'mark_seen',
+    MARK_SEEN: 'mark_seen'
 };
 
-export const MessagingTag = {
+const MessagingTag = {
     PAIRING_UPDATE: 'PAIRING_UPDATE',
     APPLICATION_UPDATE: 'APPLICATION_UPDATE',
     ACCOUNT_UPDATE: 'ACCOUNT_UPDATE',
@@ -48,57 +48,57 @@ export const MessagingTag = {
     GAME_EVENT: 'GAME_EVENT',
     TRANSPORTATION_UPDATE: 'TRANSPORTATION_UPDATE',
     FEATURE_FUNCTIONALITY_UPDATE: 'FEATURE_FUNCTIONALITY_UPDATE',
-    TICKET_UPDATE: 'TICKET_UPDATE',
+    TICKET_UPDATE: 'TICKET_UPDATE'
 };
 
-export const MessagingType = {
+const MessagingType = {
     RESPONSE: 'RESPONSE',
     UPDATE: 'UPDATE',
     MESSAGE_TAG: 'MESSAGE_TAG',
-    NON_PROMOTIONAL_SUBSCRIPTION: 'NON_PROMOTIONAL_SUBSCRIPTION',
+    NON_PROMOTIONAL_SUBSCRIPTION: 'NON_PROMOTIONAL_SUBSCRIPTION'
 };
 
-export const NotificationType = {
+const NotificationType = {
     REGULAR: 'REGULAR',
     SILENT_PUSH: 'SILENT_PUSH',
-    NO_PUSH: 'NO_PUSH',
+    NO_PUSH: 'NO_PUSH'
 };
 
-export const QuickReplyContentType = {
+const QuickReplyContentType = {
     TEXT: 'text',
-    LOCATION: 'location',
+    LOCATION: 'location'
 };
 
-export const TemplateType = {
+const TemplateType = {
     BUTTON: "button",
     GENERIC: "generic",
     LIST: "list",
     MEDIA: "media",
-    OPEN_GRAPH: "open_graph",
+    OPEN_GRAPH: "open_graph"
 };
 
-export const TopElementStyle = {
+const TopElementStyle = {
     COMPACT: 'compact',
-    LARGE: 'large',
+    LARGE: 'large'
 };
 
-export const WebviewHeightRatio = {
+const WebviewHeightRatio = {
     COMPACT: 'compact',
     TALL: 'tall',
-    FULL: 'full',
+    FULL: 'full'
 };
 
-export default {
-    AttachmentType,
-    ButtonType,
-    ImageAspectRatio,
-    MediaType,
-    MessageState,
-    MessagingTag,
-    MessagingType,
-    NotificationType,
-    QuickReplyContentType,
-    TemplateType,
-    TopElementStyle,
-    WebviewHeightRatio
-}
+module.exports = {
+    AttachmentType: AttachmentType,
+    ButtonType: ButtonType,
+    ImageAspectRatio: ImageAspectRatio,
+    MediaType: MediaType,
+    MessageState: MessageState,
+    MessagingTag: MessagingTag,
+    MessagingType: MessagingType,
+    NotificationType: NotificationType,
+    QuickReplyContentType: QuickReplyContentType,
+    TemplateType: TemplateType,
+    TopElementStyle: TopElementStyle,
+    WebviewHeightRatio: WebviewHeightRatio
+};

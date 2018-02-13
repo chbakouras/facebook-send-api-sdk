@@ -1,9 +1,12 @@
 'use strict';
 
-export default class MessageResponse {
+const messageResponse = function (recipient_id, message_id) {
+    const messageRes = {};
 
-    constructor(recipient_id: string, message_id: string) {
-        this.recipient_id = recipient_id;
-        this.message_id = message_id;
-    }
-}
+    messageRes.recipient_id = recipient_id;
+    messageRes.message_id = message_id;
+
+    return messageRes;
+};
+
+module.exports = messageResponse;

@@ -1,20 +1,13 @@
 'use strict';
 
-import * as component from './component'
-import * as template from './template'
-import MessageRequest from './MessageRequest'
-import MessageResponse from './MessageResponse'
+const component = require('./component');
+const template = require('./template');
+const messageRequest = require('./MessageRequest');
+const messageResponse = require('./MessageResponse');
 
-export {
-    component,
-    template,
-    MessageRequest,
-    MessageResponse
-};
-
-export default {
-    component,
-    template,
-    MessageRequest,
-    MessageResponse
+module.exports = {
+    component: component,
+    template: template,
+    messageRequest: messageRequest,
+    messageResponse: messageResponse
 };

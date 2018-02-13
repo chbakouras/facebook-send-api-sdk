@@ -1,14 +1,8 @@
 {
   "name": "facebook-send-api-sdk",
-  "version": "1.0.42",
+  "version": "0.0.01",
   "description": "Facebook SendApi SDK",
-  "main": "./lib/index.js",
-  "scripts": {
-    "init": "mkdir lib",
-    "clean": "rm -rf lib",
-    "prebuild": "npm run clean && npm run init",
-    "build": "babel ./src -d ./lib --ignore test.js"
-  },
+  "main": "./src/index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/chbakouras/facebook-send-api.git"
@@ -29,15 +23,7 @@
     "request": "^2.83.0",
     "request-promise": "^4.2.2"
   },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-3": "^6.24.1"
-  },
   "files": [
-    "lib"
+    "src"
   ]
 }

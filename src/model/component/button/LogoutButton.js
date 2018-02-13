@@ -1,11 +1,13 @@
 'use strict';
 
-import Button from "./Button";
-import {ButtonType} from "../../../constants";
+const constants = require('../../../constants');
 
-export default class LogoutButton extends Button {
+const logoutButton = function () {
+    const logoutButtonObj = {};
 
-    constructor() {
-        super(ButtonType.ACCOUNT_UNLINK);
-    }
-}
+    logoutButtonObj.type = constants.ButtonType.ACCOUNT_UNLINK;
+
+    return logoutButtonObj;
+};
+
+module.exports = logoutButton;

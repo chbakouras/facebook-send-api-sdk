@@ -1,21 +1,22 @@
 'use strict';
 
-import Name from "./Name";
+const recipient = function (id, phone_number, user_ref, name) {
+    const recipientObj = {};
 
-export default class Recipient {
+    recipientObj.id = id;
 
-    constructor(id: string, phone_number: string, user_ref: string, name: Name) {
-        this.id = id;
+    if (user_ref) {
+        recipientObj.user_ref = user_ref;
+    }
 
-        if (user_ref) {
-            this.user_ref = user_ref;
-        }
-
-        if (phone_number) {
-            this.phone_number = phone_number;
-            if (name) {
-                this.name = name;
-            }
+    if (phone_number) {
+        recipientObj.phone_number = phone_number;
+        if (name) {
+            recipientObj.name = name;
         }
     }
-}
+
+    return recipientObj;
+};
+
+module.exports = recipient;

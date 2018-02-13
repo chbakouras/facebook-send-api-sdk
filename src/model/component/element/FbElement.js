@@ -1,15 +1,15 @@
 'use strict';
 
-import Button from "../button/Button";
-import UrlButton from "../button/UrlButton";
+const fbElement = function (title, subtitle, image_url, default_action, buttons) {
+    const fbElementObj = {};
 
-export default class FbElement {
+    fbElementObj.title = title;
+    fbElementObj.subtitle = subtitle;
+    fbElementObj.image_url = image_url;
+    fbElementObj.default_action = default_action;
+    fbElementObj.buttons = buttons;
 
-    constructor(title: string, subtitle: string, image_url: string, default_action: UrlButton, buttons: Button[]) {
-        this.title = title;
-        this.subtitle = subtitle;
-        this.image_url = image_url;
-        this.default_action = default_action;
-        this.buttons = buttons;
-    }
-}
+    return fbElementObj;
+};
+
+module.exports = fbElement;

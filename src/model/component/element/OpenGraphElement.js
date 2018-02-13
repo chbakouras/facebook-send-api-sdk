@@ -1,11 +1,12 @@
 'use strict';
 
-import Button from "../button/Button";
+const openGraphElement = function (url, buttons) {
+    const openGraphElementObj = {};
 
-export default class OpenGraphElement {
+    openGraphElementObj.url = url;
+    openGraphElementObj.buttons = buttons;
 
-    constructor(url: string, buttons: Button[]) {
-        this.url = url;
-        this.buttons = buttons;
-    }
-}
+    return openGraphElementObj;
+};
+
+module.exports = openGraphElement;

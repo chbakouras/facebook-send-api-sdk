@@ -1,13 +1,15 @@
 'use strict';
 
-import Button from "./Button";
-import {ButtonType} from "../../../constants";
+const constants = require('../../../constants');
 
-export default class CallButton extends Button {
+const callButton = function (title, payload) {
+    const callButtonObj = {};
 
-    constructor(title: string, payload: string) {
-        super(ButtonType.PHONE_NUMBER);
-        this.title = title;
-        this.payload = payload;
-    }
-}
+    callButtonObj.type = constants.ButtonType.PHONE_NUMBER;
+    callButtonObj.title = title;
+    callButtonObj.payload = payload;
+
+    return callButtonObj;
+};
+
+module.exports = callButton;

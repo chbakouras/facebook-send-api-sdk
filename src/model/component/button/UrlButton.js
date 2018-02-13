@@ -1,29 +1,31 @@
 'use strict';
 
-import Button from "./Button";
-import {ButtonType} from "../../../constants";
+const constants = require('../../../constants');
 
-export default class UrlButton extends Button {
+const urlButton = function (url, title, webview_height_ratio, messenger_extensions, fallback_url, webview_share_button) {
+    const urlButtonObj = {};
 
-    constructor(url: string, title: string, webview_height_ratio: string, messenger_extensions: boolean, fallback_url: string, webview_share_button: string) {
-        super(ButtonType.WEB_URL);
-        this.url = url;
-        this.title = title;
+    urlButtonObj.type = constants.ButtonType.WEB_URL;
+    urlButtonObj.url = url;
+    urlButtonObj.title = title;
 
-        if (webview_height_ratio) {
-            this.webview_height_ratio = webview_height_ratio;
-        }
+    if (webview_height_ratio) {
+        urlButtonObj.webview_height_ratio = webview_height_ratio;
+    }
 
-        if (messenger_extensions) {
-            this.messenger_extensions = messenger_extensions;
+    if (messenger_extensions) {
+        urlButtonObj.messenger_extensions = messenger_extensions;
 
-            if (fallback_url) {
-                this.fallback_url = fallback_url;
-            }
-        }
-
-        if (webview_share_button) {
-            this.webview_share_button = webview_share_button;
+        if (fallback_url) {
+            urlButtonObj.fallback_url = fallback_url;
         }
     }
-}
+
+    if (webview_share_button) {
+        urlButtonObj.webview_share_button = webview_share_button;
+    }
+
+    return urlButtonObj;
+};
+
+module.exports = urlButton;

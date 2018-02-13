@@ -1,26 +1,29 @@
 'use strict';
 
-import {AttachmentType, MessagingType, TemplateType} from "../../constants";
-import {Attachment, Message} from "../component";
-import Recipient from "../component/Recipient";
-import Button from "../component/button/Button";
+const constants = require('../../../constants');
+const attachment = require('./../component/Attachment');
+const message = require('./../component/Message');
 
-export default class ButtonTemplate {
+const buttonTemplate = function (recipient, text, buttons, messaging_type) {
+    const buttonTemplateObj = {};
 
-    constructor(recipient: Recipient, text: string, buttons: Button[], messaging_type: string) {
-        if (buttons.length > 3) throw new Error("Max 3 buttons");
+    if (buttons.length > 3) throw new Error("Max 3 buttons");
 
-        this.messaging_type = messaging_type ? messaging_type : MessagingType.NON_PROMOTIONAL_SUBSCRIPTION;
-        this.recipient = recipient;
-        this.message = new Message({
-            attachment: new Attachment({
-                type: AttachmentType.TEMPLATE,
-                payload: {
-                    template_type: TemplateType.BUTTON,
-                    text: text,
-                    buttons: buttons
-                }
-            })
-        });
-    }
-}
+    buttonTemplateObj.messaging_type = messaging_type ? messaging_type : constants.MessagingType.NON_PROMOTIONAL_SUBSCRIPTION;
+    buttonTemplateObj.recipient = recipient;
+    buttonTemplateObj.message = message(
+        null,
+        attachment(
+            constants.AttachmentType.TEMPLATE,
+            {
+                template_type: constants.TemplateType.BUTTON,
+                text: text,
+                buttons: buttons
+            }
+        )
+    );
+
+    return buttonTemplateObj;
+};
+
+module.exports = buttonTemplate;

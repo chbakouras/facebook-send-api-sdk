@@ -1,29 +1,31 @@
 'use strict';
 
-import {AttachmentType, MessagingType, TemplateType, TopElementStyle} from "../../constants";
-import {Attachment, Message} from "../component";
-import Recipient from "../component/Recipient";
-import FbElement from "../component/element/FbElement";
-import Button from "../component/button/Button";
+const constants = require('../../../constants');
+const attachment = require('./../component/Attachment');
+const message = require('./../component/Message');
 
-export default class ListTemplate {
+const listTemplate = function (recipient, elements, button, top_element_style, messaging_type) {
+    const listTemplateObj = {};
 
-    constructor(recipient: Recipient, elements: FbElement[], button: Button, top_element_style: string, messaging_type: string) {
-        if (elements.length < 2) throw new Error("Minimum 2 elements");
-        if (elements.length > 4) throw new Error("Maximum 4 elements");
+    if (elements.length < 2) throw new Error("Minimum 2 elements");
+    if (elements.length > 4) throw new Error("Maximum 4 elements");
 
-        this.messaging_type = messaging_type ? messaging_type : MessagingType.NON_PROMOTIONAL_SUBSCRIPTION;
-        this.recipient = recipient;
-        this.message = new Message({
-            attachment: new Attachment({
-                type: AttachmentType.TEMPLATE,
-                payload: {
-                    template_type: TemplateType.LIST,
-                    top_element_style: top_element_style ? top_element_style : TopElementStyle.COMPACT,
-                    buttons: button ? [button] : [],
-                    elements: elements
-                }
-            })
-        });
-    }
-}
+    listTemplateObj.messaging_type = messaging_type ? messaging_type : constants.MessagingType.NON_PROMOTIONAL_SUBSCRIPTION;
+    listTemplateObj.recipient = recipient;
+    listTemplateObj.message = message(
+        null,
+        attachment(
+            constants.AttachmentType.TEMPLATE,
+            {
+                template_type: constants.TemplateType.LIST,
+                top_element_style: top_element_style ? top_element_style : constants.TopElementStyle.COMPACT,
+                buttons: button ? [button] : [],
+                elements: elements
+            }
+        )
+    );
+
+    return listTemplateObj;
+};
+
+module.exports = listTemplate;

@@ -1,20 +1,22 @@
 'use strict';
 
-import Button from "./Button";
-import {ButtonType} from "../../../constants";
+const constants = require('../../../constants');
 
-export default class GamePlayButton extends Button {
+const gamePlayButton = function (title, payload, playerId, contextId) {
+    const gamePlayButtonObj = {};
 
-    constructor(title: string, payload: string, playerId: string, contextId: string) {
-        super(ButtonType.GAME_PLAY);
-        this.title = title;
-        this.payload = payload;
+    gamePlayButtonObj.type = constants.ButtonType.GAME_PLAY;
+    gamePlayButtonObj.title = title;
+    gamePlayButtonObj.payload = payload;
 
-        if (playerId && contextId) {
-            this.game_metadata = {
-                player_id: playerId,
-                context_id: contextId
-            }
+    if (playerId && contextId) {
+        gamePlayButtonObj.game_metadata = {
+            player_id: playerId,
+            context_id: contextId
         }
     }
-}
+
+    return gamePlayButtonObj;
+};
+
+module.exports = gamePlayButton;

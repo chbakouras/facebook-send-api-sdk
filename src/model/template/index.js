@@ -1,23 +1,15 @@
 'use strict';
 
-import ButtonTemplate from './ButtonTemplate';
-import GenericTemplate from './GenericTemplate';
-import ListTemplate from './ListTemplate';
-import MediaTemplate from './MediaTemplate';
-import OpenGraphTemplate from './OpenGraphTemplate';
+const buttonTemplate = require('./ButtonTemplate');
+const genericTemplate = require('./GenericTemplate');
+const listTemplate = require('./ListTemplate');
+const mediaTemplate = require('./MediaTemplate');
+const openGraphTemplate = require('./OpenGraphTemplate');
 
-export {
-    ButtonTemplate,
-    GenericTemplate,
-    ListTemplate,
-    MediaTemplate,
-    OpenGraphTemplate,
-};
-
-export default {
-    ButtonTemplate,
-    GenericTemplate,
-    ListTemplate,
-    MediaTemplate,
-    OpenGraphTemplate,
+module.exports = {
+    buttonTemplate: buttonTemplate,
+    genericTemplate: genericTemplate,
+    listTemplate: listTemplate,
+    mediaTemplate: mediaTemplate,
+    openGraphTemplate: openGraphTemplate
 };

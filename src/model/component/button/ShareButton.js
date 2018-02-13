@@ -1,24 +1,24 @@
 'use strict';
 
-import Button from "./Button";
-import {ButtonType, AttachmentType, TemplateType} from "../../../constants";
-import FbElement from "../element/FbElement";
+const constants = require('../../../constants');
 
-export default class ShareButton extends Button {
+const shareButton = function (element) {
+    const shareButtonObj = {};
 
-    constructor(element: FbElement) {
-        super(ButtonType.ELEMENT_SHARE);
-
-        this.share_contents = {
-            attachment: {
-                type: AttachmentType.TEMPLATE,
-                payload: {
-                    template_type: TemplateType.GENERIC,
-                    elements: [
-                        element
-                    ]
-                }
+    shareButtonObj.type = constants.ButtonType.ELEMENT_SHARE;
+    shareButtonObj.share_contents = {
+        attachment: {
+            type: constants.AttachmentType.TEMPLATE,
+            payload: {
+                template_type: constants.TemplateType.GENERIC,
+                elements: [
+                    element
+                ]
             }
         }
-    }
-}
+    };
+
+    return shareButtonObj;
+};
+
+module.exports = shareButton;

@@ -1,9 +1,12 @@
 'use strict';
 
-export default class Name {
+const name = function (first_name, last_name) {
+    const nameObj = {};
 
-    constructor(first_name: string, last_name: string) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-    }
-}
+    nameObj.first_name = first_name;
+    nameObj.last_name = last_name;
+
+    return nameObj;
+};
+
+module.exports = name;

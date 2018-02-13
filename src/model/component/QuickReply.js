@@ -1,19 +1,22 @@
 'use strict';
 
-import {QuickReplyContentType} from "../../constants";
+const constants = require("../../constants");
 
-export default class QuickReply {
+const quickReply = function (content_type, title, payload, image_url) {
+    const quickReplyObj = {};
 
-    constructor(content_type: string, title: string, payload, image_url: string) {
-        this.content_type = content_type;
+    quickReplyObj.content_type = content_type;
 
-        if (content_type === QuickReplyContentType.TEXT) {
-            this.title = title;
-            this.payload = payload;
+    if (content_type === constants.QuickReplyContentType.TEXT) {
+        quickReplyObj.title = title;
+        quickReplyObj.payload = payload;
 
-            if (image_url) {
-                this.image_url = image_url;
-            }
+        if (image_url) {
+            quickReplyObj.image_url = image_url;
         }
     }
-}
+
+    return quickReplyObj;
+};
+
+module.exports = quickReply;
