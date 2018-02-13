@@ -9,17 +9,17 @@ const SendApiSdk = (function () {
     var apiUrl;
     var requestOptions;
 
-    function SendApiSdk(accessToken) {
-        apiUrl = 'https://graph.facebook.com/v2.11/me/messages?access_token=' + accessToken;
+    function SendApiSdk() {
+        apiUrl = 'https://graph.facebook.com/v2.11/me/messages?access_token=';
         requestOptions = {
             method: 'POST',
-            uri: apiUrl,
             json: true
         };
     }
 
-    SendApiSdk.prototype.sendMessage = function (messageRequestOrTemplate, typing) {
+    SendApiSdk.prototype.sendMessage = function (accessToken, messageRequestOrTemplate, typing) {
         const options = JSON.parse(JSON.stringify(requestOptions));
+        options.uri = apiUrl + accessToken;
         options.body = messageRequestOrTemplate;
 
         if (typing) {
@@ -44,13 +44,14 @@ const SendApiSdk = (function () {
         }
     };
 
-    SendApiSdk.prototype.sendTypingIndicator = function (recipient) {
-        return SendApiSdk.prototype.sendAction(recipient, constants.MessageState.TYPING_ON);
+    SendApiSdk.prototype.sendTypingIndicator = function (accessToken, recipient) {
+        return SendApiSdk.prototype.sendAction(accessToken, recipient, constants.MessageState.TYPING_ON);
     };
 
 
-    SendApiSdk.prototype.sendAction = function (recipient, sender_action) {
+    SendApiSdk.prototype.sendAction = function (accessToken, recipient, sender_action) {
         const options = JSON.parse(JSON.stringify(requestOptions));
+        options.uri = apiUrl + accessToken;
         options.body = {
             recipient: recipient,
             sender_action: sender_action
