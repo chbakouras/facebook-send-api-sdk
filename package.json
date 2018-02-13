@@ -1,6 +1,6 @@
 {
   "name": "facebook-send-api-sdk",
-  "version": "0.0.03",
+  "version": "0.0.04",
   "description": "Facebook SendApi SDK",
   "main": "./src/index.js",
   "repository": {

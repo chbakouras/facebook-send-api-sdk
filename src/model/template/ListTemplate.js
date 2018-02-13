@@ -1,6 +1,6 @@
 'use strict';
 
-const constants = require('../../../constants');
+const constants = require('../../constants');
 const attachment = require('./../component/Attachment');
 const message = require('./../component/Message');
 
