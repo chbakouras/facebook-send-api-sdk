@@ -29,17 +29,11 @@ const SendApiSdk = (function () {
                 })
                 .then(function (response) {
                     return messageResponse(response.recipient_id, response.message_id);
-                })
-                .catch(function (error) {
-                    console.log(error)
-                })
+                });
         } else {
             return rp(options)
                 .then(function (response) {
                     return messageResponse(response.recipient_id, response.message_id)
-                })
-                .catch(function (error) {
-                    console.log(error)
                 });
         }
     };
@@ -60,9 +54,6 @@ const SendApiSdk = (function () {
         return rp(options)
             .then(function (response) {
                 return messageResponse(response.recipient_id, response.message_id);
-            })
-            .catch(function (reason) {
-                console.log(reason)
             });
     };
 
