@@ -2,22 +2,21 @@ import Button from './Button'
 import Constants from '../../../Constants'
 
 export default class DefaultAction extends Button {
-  public url: string
-  public webview_height_ratio: string
-  public messenger_extensions: boolean
-  public fallback_url: string
-  public webview_share_button: string
+  public url: string;
+  public webview_height_ratio: string;
+  public messenger_extensions: boolean;
+  public fallback_url: string;
+  public webview_share_button: string;
 
   constructor(
     url: string,
-    title: string,
     webview_height_ratio: string,
     messenger_extensions: boolean,
     fallback_url: string,
     webview_share_button: string
   ) {
-    super(Constants.ButtonType.WEB_URL)
-    this.url = url
+    super(Constants.ButtonType.WEB_URL);
+    this.url = url;
 
     if (webview_height_ratio) {
       this.webview_height_ratio = webview_height_ratio
