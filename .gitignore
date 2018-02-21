@@ -1,5 +1,11 @@
 node_modules
-*.iml
+coverage
+.nyc_output
+.DS_Store
+*.log
+.vscode
 .idea
-lib
 dist
+compiled
+.awcache
+.rpt2_cache
