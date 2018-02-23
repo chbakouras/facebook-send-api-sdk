@@ -1,37 +1,39 @@
 import Button from './Button'
 import Constants from '../../../Constants'
 
+export interface IDefaultAction {
+  url: string
+  webview_height_ratio?: string
+  messenger_extensions?: boolean
+  fallback_url?: string
+  webview_share_button?: string
+}
+
 export default class DefaultAction extends Button {
-  public url: string;
-  public webview_height_ratio: string;
-  public messenger_extensions: boolean;
-  public fallback_url: string;
-  public webview_share_button: string;
+  public url: string
+  public webview_height_ratio: string
+  public messenger_extensions: boolean
+  public fallback_url: string
+  public webview_share_button: string
 
-  constructor(
-    url: string,
-    webview_height_ratio: string,
-    messenger_extensions: boolean,
-    fallback_url: string,
-    webview_share_button: string
-  ) {
-    super(Constants.ButtonType.WEB_URL);
-    this.url = url;
+  constructor(defaultAction: IDefaultAction) {
+    super(Constants.ButtonType.WEB_URL)
+    this.url = defaultAction.url
 
-    if (webview_height_ratio) {
-      this.webview_height_ratio = webview_height_ratio
+    if (defaultAction.webview_height_ratio) {
+      this.webview_height_ratio = defaultAction.webview_height_ratio
     }
 
-    if (messenger_extensions) {
-      this.messenger_extensions = messenger_extensions
+    if (defaultAction.messenger_extensions) {
+      this.messenger_extensions = defaultAction.messenger_extensions
 
-      if (fallback_url) {
-        this.fallback_url = fallback_url
+      if (defaultAction.fallback_url) {
+        this.fallback_url = defaultAction.fallback_url
       }
     }
 
-    if (webview_share_button) {
-      this.webview_share_button = webview_share_button
+    if (defaultAction.webview_share_button) {
+      this.webview_share_button = defaultAction.webview_share_button
     }
   }
 }

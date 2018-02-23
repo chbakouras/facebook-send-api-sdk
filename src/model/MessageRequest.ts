@@ -2,6 +2,15 @@ import Constants from '../Constants'
 import Recipient from './component/Recipient'
 import Message from './component/Message'
 
+export interface IMessageRequest {
+  recipient: Recipient
+  message?: Message
+  messaging_type?: string
+  notification_type?: string
+  tag?: string
+  sender_action?: string
+}
+
 export default class MessageRequest {
   public recipient: Recipient
   public sender_action: string
@@ -10,29 +19,22 @@ export default class MessageRequest {
   public notification_type: string
   public tag: string
 
-  constructor(
-    recipient: Recipient,
-    message: Message,
-    messaging_type: string,
-    notification_type: string,
-    tag: string,
-    sender_action: string
-  ) {
-    this.recipient = recipient
+  constructor(messageRequest: IMessageRequest) {
+    this.recipient = messageRequest.recipient
 
-    if (sender_action) {
-      this.sender_action = sender_action
+    if (messageRequest.sender_action) {
+      this.sender_action = messageRequest.sender_action
     } else {
-      this.message = message
-      this.messaging_type = messaging_type
-        ? messaging_type
+      this.message = messageRequest.message
+      this.messaging_type = messageRequest.messaging_type
+        ? messageRequest.messaging_type
         : Constants.MessagingType.NON_PROMOTIONAL_SUBSCRIPTION
-      this.notification_type = notification_type
-        ? notification_type
+      this.notification_type = messageRequest.notification_type
+        ? messageRequest.notification_type
         : Constants.NotificationType.REGULAR
 
-      if (tag) {
-        this.tag = tag
+      if (messageRequest.tag) {
+        this.tag = messageRequest.tag
       }
     }
   }

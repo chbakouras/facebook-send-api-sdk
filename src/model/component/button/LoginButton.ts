@@ -2,9 +2,9 @@ import Button from './Button'
 import Constants from '../../../Constants'
 
 export default class LoginButton extends Button {
-  public url: any
+  public url: string
 
-  constructor(url) {
+  constructor(url: string) {
     super(Constants.ButtonType.ACCOUNT_LINK)
     this.url = url
   }

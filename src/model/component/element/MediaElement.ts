@@ -1,32 +1,34 @@
 import Constants from '../../../Constants'
 import Button from '../button/Button'
 
+export interface IMediaElement {
+  media_type: string
+  attachment_id?: string
+  url?: string
+  button: Button
+}
+
 export default class MediaElement {
   public media_type: string
   public attachment_id: string
   public url: string
   public buttons: Button[]
 
-  constructor(
-    media_type: string,
-    attachment_id: string,
-    url: string,
-    button: Button
-  ) {
+  constructor(mediaElement: IMediaElement) {
     if (
-      media_type !== Constants.MediaType.IMAGE &&
-      media_type !== Constants.MediaType.VIDEO
+      mediaElement.media_type !== Constants.MediaType.IMAGE &&
+      mediaElement.media_type !== Constants.MediaType.VIDEO
     )
       throw new Error('Not supported media type')
 
-    this.media_type = media_type
+    this.media_type = mediaElement.media_type
 
-    if (attachment_id) {
-      this.attachment_id = attachment_id
-    } else if (url) {
-      this.url = url
+    if (mediaElement.attachment_id) {
+      this.attachment_id = mediaElement.attachment_id
+    } else if (mediaElement.url) {
+      this.url = mediaElement.url
     }
 
-    this.buttons = [button]
+    this.buttons = [mediaElement.button]
   }
 }

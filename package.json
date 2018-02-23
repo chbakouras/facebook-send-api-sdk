@@ -1,6 +1,6 @@
 {
   "name": "facebook-send-api-sdk",
-  "version": "0.1.1",
+  "version": "0.1.12",
   "description": "",
   "keywords": [],
   "main": "dist/facebook-send-api-sdk.umd.js",

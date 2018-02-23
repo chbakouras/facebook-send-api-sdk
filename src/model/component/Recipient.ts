@@ -1,4 +1,11 @@
-import Name from './Name'
+import { default as Name } from './Name'
+
+export interface IRecipient {
+  id: string
+  phone_number?: string
+  user_ref?: string
+  name?: Name
+}
 
 export default class Recipient {
   public id: string
@@ -6,17 +13,17 @@ export default class Recipient {
   public phone_number: string
   public name: Name
 
-  constructor(id: string, phone_number: string, user_ref: string, name: Name) {
-    this.id = id
+  constructor(recipient: IRecipient) {
+    this.id = recipient.id
 
-    if (user_ref) {
-      this.user_ref = user_ref
+    if (recipient.user_ref) {
+      this.user_ref = recipient.user_ref
     }
 
-    if (phone_number) {
-      this.phone_number = phone_number
-      if (name) {
-        this.name = name
+    if (recipient.phone_number) {
+      this.phone_number = recipient.phone_number
+      if (recipient.name) {
+        this.name = recipient.name
       }
     }
   }

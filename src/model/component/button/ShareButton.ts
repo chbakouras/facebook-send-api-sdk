@@ -10,7 +10,7 @@ export default class ShareButton extends Button {
     }
   }
 
-  constructor(element: FbElement) {
+  constructor(element?: FbElement) {
     super(Constants.ButtonType.ELEMENT_SHARE)
 
     if (element) {

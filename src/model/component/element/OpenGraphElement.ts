@@ -1,11 +1,16 @@
 import Button from '../button/Button'
 
+export interface IOpenGraphElement {
+  url: string
+  buttons: Button[]
+}
+
 export default class OpenGraphElement {
   public url: string
   public buttons: Button[]
 
-  constructor(url: string, buttons: Button[]) {
-    this.url = url
-    this.buttons = buttons
+  constructor(openGraphElement: IOpenGraphElement) {
+    this.url = openGraphElement.url
+    this.buttons = openGraphElement.buttons
   }
 }

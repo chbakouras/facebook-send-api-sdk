@@ -1,9 +1,14 @@
+export interface IMessageResponse {
+  recipient_id: string
+  message_id: string
+}
+
 export default class MessageResponse {
   public recipient_id: string
   public message_id: string
 
-  constructor(recipient_id: string, message_id: string) {
-    this.recipient_id = recipient_id
-    this.message_id = message_id
+  constructor(messageResponse: IMessageResponse) {
+    this.recipient_id = messageResponse.recipient_id
+    this.message_id = messageResponse.message_id
   }
 }

@@ -1,37 +1,39 @@
 import Attachment from './Attachment'
 import QuickReply from './QuickReply'
 
+export interface IMessage {
+  text?: string
+  attachment?: Attachment
+  quick_replies?: QuickReply[]
+  metadata?: string
+}
+
 export default class Message {
   public text: string
   public attachment: Attachment
   public quick_replies: QuickReply[]
   public metadata: string
 
-  constructor(
-    text: string,
-    attachment: Attachment,
-    quick_replies: QuickReply[],
-    metadata: string
-  ) {
-    if (!text && !attachment)
+  constructor(message: IMessage) {
+    if (!message.text && !message.attachment)
       throw new Error('Message text or attachment must be included')
 
-    if (text) {
-      this.text = text
+    if (message.text) {
+      this.text = message.text
     }
 
-    if (attachment) {
-      this.attachment = attachment
+    if (message.attachment) {
+      this.attachment = message.attachment
     }
 
-    if (quick_replies) {
-      if (quick_replies.length > 11)
+    if (message.quick_replies) {
+      if (message.quick_replies.length > 11)
         throw new Error('Facebook renders up to 11 quick replies')
-      this.quick_replies = quick_replies
+      this.quick_replies = message.quick_replies
     }
 
-    if (metadata) {
-      this.metadata = metadata
+    if (message.metadata) {
+      this.metadata = message.metadata
     }
   }
 }
