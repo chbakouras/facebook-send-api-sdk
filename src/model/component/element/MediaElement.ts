@@ -15,12 +15,6 @@ export default class MediaElement {
   public buttons: Button[]
 
   constructor(mediaElement: IMediaElement) {
-    if (
-      mediaElement.media_type !== Constants.MediaType.IMAGE &&
-      mediaElement.media_type !== Constants.MediaType.VIDEO
-    )
-      throw new Error('Not supported media type')
-
     this.media_type = mediaElement.media_type
 
     if (mediaElement.attachment_id) {

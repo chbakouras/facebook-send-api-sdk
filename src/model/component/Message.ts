@@ -15,9 +15,6 @@ export default class Message {
   public metadata: string
 
   constructor(message: IMessage) {
-    if (!message.text && !message.attachment)
-      throw new Error('Message text or attachment must be included')
-
     if (message.text) {
       this.text = message.text
     }
@@ -27,8 +24,6 @@ export default class Message {
     }
 
     if (message.quick_replies) {
-      if (message.quick_replies.length > 11)
-        throw new Error('Facebook renders up to 11 quick replies')
       this.quick_replies = message.quick_replies
     }
 

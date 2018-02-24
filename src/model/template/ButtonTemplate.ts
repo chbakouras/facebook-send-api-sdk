@@ -17,8 +17,6 @@ export default class ButtonTemplate {
   public message: Message
 
   constructor(buttonTemplate: IButtonTemplate) {
-    if (buttonTemplate.buttons.length > 3) throw new Error('Max 3 buttons')
-
     this.messaging_type = buttonTemplate.messaging_type
       ? buttonTemplate.messaging_type
       : Constants.MessagingType.NON_PROMOTIONAL_SUBSCRIPTION

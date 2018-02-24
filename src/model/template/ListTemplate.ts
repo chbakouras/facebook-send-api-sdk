@@ -19,9 +19,6 @@ export default class ListTemplate {
   public messaging_type?: string
 
   constructor(listTemplate: IListTemplate) {
-    if (listTemplate.elements.length < 2) throw new Error('Minimum 2 elements')
-    if (listTemplate.elements.length > 4) throw new Error('Maximum 4 elements')
-
     this.messaging_type = listTemplate.messaging_type
       ? listTemplate.messaging_type
       : Constants.MessagingType.NON_PROMOTIONAL_SUBSCRIPTION
