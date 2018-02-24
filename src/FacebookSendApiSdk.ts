@@ -1,8 +1,8 @@
 import rp from 'request-promise'
 import Constants from './Constants'
 import MessageResponse from './model/MessageResponse'
-import Bluebird from 'bluebird'
 import Recipient from './model/component/Recipient'
+import * as Bluebird from 'bluebird'
 
 export default class FacebookSendApiSdk {
   public apiUrl: string
