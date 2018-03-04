@@ -3,10 +3,10 @@ import DefaultAction from '../button/DefaultAction'
 
 export interface IFbElement {
   title: string
-  subtitle: string
-  image_url: string
-  default_action: DefaultAction
-  buttons: Button[]
+  subtitle?: string
+  image_url?: string
+  default_action?: DefaultAction
+  buttons?: Button[]
 }
 
 export default class FbElement {
